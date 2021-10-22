@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>타이머</title>
+    <script>
+
+        let isStarted = false
+
+        function getToken(){
+            if(isStarted === false){
+                isStarted = true
+            
+                const token = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+                document.getElementById("aaa").innerText = token
+
+                let time = 10
+                setInterval(function(){
+                    if(time >= 0){
+                         const minutes = String(Math.floor(time / 60)).padStart(2, "0")
+                         const seconds = String(time % 60).padStart(2, "0")
+                         document.getElementById("qqq").innerText = minutes + ":" + seconds
+                         time = time - 1
+                    } else if(time <=0){
+                        document.getElementById("rrr").setAttribute("disabled", "true")
+                    }
+              }, 1000)
+            } else {
+                alert("이미 실행되었습니다")   
+            }
+        }
+    </script>
+</head>
+<body>
+    <span id="aaa">000000</span><button onclick="getToken()">인증번호전송</button><br />
+    <span id="qqq">10</span><button>인증완료</button>
+</body>
+</html>

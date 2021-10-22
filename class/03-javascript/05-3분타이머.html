@@ -1,0 +1,10 @@
+let time = 180
+setInterval(function(){
+    if(time >= 0){
+    const minutes = Math.floor(time / 60)
+    const seconds = time % 60
+    console.log(minutes + ":" + seconds)
+    time = time - 1
+    }
+}, 1000)
+<!-- 2 -->

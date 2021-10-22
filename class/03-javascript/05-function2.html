@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   
+    <title>인증번호 실습</title>
+    <script>
+        const aaa=function(){
+            // alert("안녕하세요")           
+            const token = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+            document.getElementById("qqq").innerText = token  
+        }
+    </script>
+</head>
+<body>
+    <h1 id="qqq">000000</h1>
+   <button onclick="aaa()">인증번호 전송</button>
+</body>
+</html>
